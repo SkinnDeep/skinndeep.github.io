@@ -3,93 +3,80 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Under Construction</title>
+    <title>SkinnDeep — Projects & Software</title>
+    <link rel="icon" type="image/png" href="statcraft/images/logo.png">
     <style>
         body {
-            font-family: Arial, sans-serif;
-            background-color: #f4f4f4;
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
+            background-color: #0b0f19;
+            color: #f1f5f9;
             text-align: center;
-            padding: 50px;
+            padding: 60px 20px;
+            margin: 0;
         }
 
         h1 {
-            color: #333;
+            color: #ffffff;
+            font-size: 28px;
+            margin-bottom: 8px;
         }
 
         p {
-            color: #555;
+            color: #94a3b8;
+            font-size: 15px;
+            max-width: 500px;
+            margin: 0 auto 30px auto;
         }
 
-        .loading-container {
-            margin-top: 30px;
-            display: flex;
-            flex-direction: column;
-            align-items: center;
+        .showcase-card {
+            margin-top: 40px;
+            padding: 32px 24px;
+            background: rgba(15, 23, 42, 0.7);
+            border-radius: 16px;
+            max-width: 500px;
+            margin-left: auto;
+            margin-right: auto;
+            box-shadow: 0 10px 40px rgba(0, 0, 0, 0.5), 0 0 30px rgba(59, 130, 246, 0.15);
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            text-align: center;
+            transition: transform 0.2s, border-color 0.2s;
         }
 
-        .loading {
-            width: 100px;
-            height: 20px;
-            background-color: #ddd;
-            position: relative;
-            overflow: hidden;
-            margin-bottom: 10px;
+        .showcase-card:hover {
+            transform: translateY(-2px);
+            border-color: rgba(96, 165, 250, 0.4);
         }
 
-        .loading .bar {
-            width: 90%; /* Adjusted to reach around 90% */
-            height: 100%;
-            background-color: #4caf50;
-            position: absolute;
-            animation: loadingAnimation 3s infinite ease-in-out;
+        .btn {
+            display: inline-block;
+            background: linear-gradient(135deg, #2563eb, #4f46e5);
+            color: #ffffff;
+            text-decoration: none;
+            padding: 12px 28px;
+            border-radius: 10px;
+            font-weight: 600;
+            font-size: 15px;
+            box-shadow: 0 4px 15px rgba(37, 99, 235, 0.3);
+            transition: all 0.2s;
         }
 
-        .speech-bubble {
-            position: relative;
-            background-color: #4caf50;
-            color: white;
-            padding: 5px 10px;
-            border-radius: 5px;
-            margin-bottom: 10px;
-        }
-
-        .arrow {
-            position: absolute;
-            width: 0;
-            height: 0;
-            border-left: 10px solid transparent;
-            border-right: 10px solid transparent;
-            border-bottom: 10px solid #4caf50;
-            top: -10px;
-            left: 50%;
-            transform: translateX(-50%);
-        }
-
-        @keyframes loadingAnimation {
-            0% {
-                width: 0;
-            }
-            50% {
-                width: 90%;
-            }
-            100% {
-                width: 90%;
-            }
+        .btn:hover {
+            background: linear-gradient(135deg, #1d4ed8, #4338ca);
+            box-shadow: 0 6px 20px rgba(37, 99, 235, 0.45);
         }
     </style>
 </head>
 <body>
-    <h1>Under Construction</h1>
-    <p>This website is a work in progress. We're working hard to bring you something awesome. Stay tuned!</p>
+    <h1>SkinnDeep Software</h1>
+    <p>Engineering robust, modern software tools and statistical computing platforms.</p>
 
-    <div class="loading-container">
-        <div class="loading">
-            <div class="bar"></div>
-        </div>
-        <div class="speech-bubble">
-            <div class="arrow"></div>
-            Almost Done!
-        </div>
+    <div class="showcase-card">
+        <img src="statcraft/images/logo.png" alt="StatCraft" style="width: 56px; height: 56px; border-radius: 12px; margin-bottom: 16px; box-shadow: 0 4px 12px rgba(0,0,0,0.3);">
+        <h2 style="margin: 0 0 8px 0; color: #ffffff; font-size: 22px;">StatCraft</h2>
+        <p style="color: #94a3b8; font-size: 14px; margin-bottom: 24px; line-height: 1.5;">
+            The modern, high-performance alternative to Minitab&reg;. Full .MPX file & formula parity, advanced DOE, Six Sigma capability analysis, and publication charts.
+        </p>
+        <a href="statcraft/" class="btn">Open StatCraft Showcase &rarr;</a>
     </div>
 </body>
 </html>
