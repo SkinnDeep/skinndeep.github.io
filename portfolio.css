@@ -40,9 +40,9 @@ figure img { display: block; width: 100%; height: auto; aspect-ratio: 1 / 1; obj
 figure.cad img, figure.sketch img { object-fit: contain; }
 figure.cad > a { background: #fff; box-shadow: inset 0 0 0 1px var(--line); }
 figure.cad img { padding: 8px; }
-#toolbox img, #fpv img { aspect-ratio: 4 / 3; }
-#toolbox .gallery { grid-template-columns: 1.3fr 1fr; align-items: end; }
-#toolbox img { height: clamp(200px, 32vw, 390px); }
+:is(#bend-gauge, #toolbox) img, #fpv img { aspect-ratio: 4 / 3; }
+:is(#bend-gauge, #toolbox) .gallery { grid-template-columns: 1.3fr 1fr; align-items: end; }
+:is(#bend-gauge, #toolbox) img { height: clamp(200px, 32vw, 390px); }
 #wind-tunnel .gallery figure:first-child img { object-position: center 75%; }
 .whoop img { aspect-ratio: 2 / 1; object-position: center 46%; }
 figcaption { margin-top: 7px; color: var(--muted); font-size: .82rem; }
@@ -57,12 +57,12 @@ footer { margin-top: 50px !important; border-top: 1px solid var(--line); padding
 @media (max-width: 720px) {
   .shell { width: calc(100% - 32px); }
   .projects, .software { grid-template-columns: 1fr; }
-  #toolbox .gallery { grid-template-columns: repeat(2, minmax(0, 1fr)); }
-  #toolbox img { height: auto; }
+  :is(#bend-gauge, #toolbox) .gallery { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+  :is(#bend-gauge, #toolbox) img { height: auto; }
   #fpv .gallery, .printers { grid-auto-flow: row; grid-template-columns: repeat(2, minmax(0, 1fr)); }
 }
 @media (max-width: 380px) {
-  #toolbox .gallery { grid-auto-flow: row; grid-template-columns: 1fr; }
+  :is(#bend-gauge, #toolbox) .gallery { grid-auto-flow: row; grid-template-columns: 1fr; }
 }
 
 #pencil-clip .gallery, #clock .gallery {
