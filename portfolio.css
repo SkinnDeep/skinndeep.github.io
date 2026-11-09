@@ -1,10 +1,10 @@
 :root {
-  color-scheme: light;
-  --ink: #19252c;
-  --muted: #4f606b;
-  --paper: #f2f4f4;
-  --line: #d8e0e2;
-  --accent: #16596a;
+  color-scheme: dark;
+  --ink: #edf3f6;
+  --muted: #adbdc6;
+  --paper: #10171c;
+  --line: #344650;
+  --accent: #8ed8e5;
 }
 * { box-sizing: border-box; }
 body { margin: 0; background: var(--paper); color: var(--ink); font: 16px/1.55 system-ui, sans-serif; }
@@ -29,7 +29,7 @@ h3 { font-size: clamp(1.55rem, 3vw, 2.15rem); margin: 7px 0 12px; }
 .section-head { border-top: 1px solid var(--line); padding: 19px 0; }
 section + section { margin-top: 54px; }
 .projects { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 18px; }
-.card { display: flex; flex-direction: column; justify-content: space-between; gap: 20px; border: 1px solid var(--line); background: #fff; border-radius: 14px; padding: clamp(14px, 2vw, 24px); }
+.card { display: flex; flex-direction: column; justify-content: space-between; gap: 20px; border: 1px solid var(--line); background: #19242b; border-radius: 14px; padding: clamp(14px, 2vw, 24px); }
 .card.wide { grid-column: 1 / -1; }
 .copy > p:last-child, .intro > p:last-child, .section-intro, .software dd, .note { color: var(--muted); }
 .copy > p:last-child { max-width: 68ch; }
@@ -49,7 +49,7 @@ figcaption { margin-top: 7px; color: var(--muted); font-size: .82rem; }
 .section-intro { margin: 0 0 16px; }
 .printers img { aspect-ratio: 4 / 3; }
 .software { margin: 0; display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 16px; }
-.software div { background: #fff; border: 1px solid var(--line); border-radius: 10px; padding: 16px; }
+.software div { background: #19242b; border: 1px solid var(--line); border-radius: 10px; padding: 16px; }
 .software dt { font-weight: 700; margin-bottom: 4px; }
 .software dd { margin: 0; }
 .note { margin-top: 12px; font-size: .85rem; }
@@ -64,3 +64,10 @@ footer { margin-top: 50px !important; border-top: 1px solid var(--line); padding
 @media (max-width: 380px) {
   #toolbox .gallery { grid-auto-flow: row; grid-template-columns: 1fr; }
 }
+
+#pencil-clip .gallery, #clock .gallery {
+  grid-auto-flow: row;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+}
+#clock .gallery figure:first-child { grid-row: span 2; }
+#clock .gallery figure:first-child img { aspect-ratio: 9 / 16; }
