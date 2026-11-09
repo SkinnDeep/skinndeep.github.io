@@ -1,82 +1,115 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>SkinnDeep — Projects & Software</title>
-    <link rel="icon" type="image/png" href="statcraft/images/logo.png">
-    <style>
-        body {
-            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
-            background-color: #0b0f19;
-            color: #f1f5f9;
-            text-align: center;
-            padding: 60px 20px;
-            margin: 0;
-        }
-
-        h1 {
-            color: #ffffff;
-            font-size: 28px;
-            margin-bottom: 8px;
-        }
-
-        p {
-            color: #94a3b8;
-            font-size: 15px;
-            max-width: 500px;
-            margin: 0 auto 30px auto;
-        }
-
-        .showcase-card {
-            margin-top: 40px;
-            padding: 32px 24px;
-            background: rgba(15, 23, 42, 0.7);
-            border-radius: 16px;
-            max-width: 500px;
-            margin-left: auto;
-            margin-right: auto;
-            box-shadow: 0 10px 40px rgba(0, 0, 0, 0.5), 0 0 30px rgba(59, 130, 246, 0.15);
-            border: 1px solid rgba(255, 255, 255, 0.1);
-            text-align: center;
-            transition: transform 0.2s, border-color 0.2s;
-        }
-
-        .showcase-card:hover {
-            transform: translateY(-2px);
-            border-color: rgba(96, 165, 250, 0.4);
-        }
-
-        .btn {
-            display: inline-block;
-            background: linear-gradient(135deg, #2563eb, #4f46e5);
-            color: #ffffff;
-            text-decoration: none;
-            padding: 12px 28px;
-            border-radius: 10px;
-            font-weight: 600;
-            font-size: 15px;
-            box-shadow: 0 4px 15px rgba(37, 99, 235, 0.3);
-            transition: all 0.2s;
-        }
-
-        .btn:hover {
-            background: linear-gradient(135deg, #1d4ed8, #4338ca);
-            box-shadow: 0 6px 20px rgba(37, 99, 235, 0.45);
-        }
-    </style>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="Isaac Skinner’s portfolio of CAD, 3D printing, and manufacturing engineering projects.">
+  <title>Isaac Skinner | Manufacturing Engineering</title>
+  <link rel="icon" href="favicon.ico" sizes="any">
+  <style>
+    :root {
+      color-scheme: light;
+      --paper: #faf9f5;
+      --ink: #22241f;
+      --muted: #56594e;
+      --rule: #d7d6cb;
+      --green: #315641;
+    }
+    * { box-sizing: border-box; }
+    body {
+      margin: 0 auto;
+      max-width: 780px;
+      padding: 0 24px;
+      background: var(--paper);
+      color: var(--ink);
+      font: 16px/1.6 system-ui, sans-serif;
+    }
+    a { color: var(--green); text-underline-offset: .23em; }
+    a:hover { color: var(--ink); }
+    a:focus-visible { outline: 2px solid var(--green); outline-offset: 4px; }
+    header, footer {
+      display: flex;
+      align-items: baseline;
+      justify-content: space-between;
+      flex-wrap: wrap;
+      gap: 8px 20px;
+      padding: 20px 0;
+      border-bottom: 1px solid var(--rule);
+      font-size: .875rem;
+    }
+    header strong { font-weight: 650; }
+    main { padding: 51px 0 36px; }
+    h1, h2, h3, p { margin: 0; }
+    h1, h2 { font-family: Georgia, serif; font-weight: 500; line-height: 1.12; }
+    h1 { font-size: clamp(2.6rem, 8vw, 4.1rem); letter-spacing: -.055em; }
+    h2 { font-size: 1.9rem; letter-spacing: -.035em; }
+    h3 { font-size: 1.07rem; line-height: 1.35; }
+    .intro { max-width: 54ch; margin-top: 16px; font-size: 1.06rem; }
+    .skills { margin-top: 14px; color: var(--muted); font-size: .88rem; }
+    section { margin-top: 40px; }
+    .projects { margin-top: 13px; }
+    .project {
+      display: grid;
+      grid-template-columns: minmax(145px, .75fr) 1.25fr;
+      gap: 12px 22px;
+      padding: 13px 0;
+      border-bottom: 1px solid var(--rule);
+    }
+    .project p, .software p { color: var(--muted); }
+    .project figure { grid-column: 1 / -1; margin: 0; }
+    .project img { display: block; width: 100%; height: auto; border-radius: 4px; }
+    .note { margin-top: 9px; color: var(--muted); font-size: .82rem; }
+    .software { margin: 11px 0 0; }
+    .software div { margin-top: 10px; }
+    .software dt, .software dd { display: inline; }
+    .software dt { font-weight: 650; }
+    .software dd { margin: 0 0 0 .3em; color: var(--muted); }
+    footer { border-bottom: 0; border-top: 1px solid var(--rule); color: var(--muted); }
+    @media (max-width: 480px) {
+      main { padding-top: 34px; }
+      .project { grid-template-columns: 1fr; gap: 4px; }
+    }
+  </style>
 </head>
 <body>
-    <h1>SkinnDeep Software</h1>
-    <p>Engineering robust, modern software tools and statistical computing platforms.</p>
+  <header>
+    <strong>Isaac Skinner</strong>
+    <a href="https://github.com/SkinnDeep">GitHub</a>
+  </header>
+  <main>
+    <h1>CAD &amp; shop projects</h1>
+    <p class="intro">I’m a manufacturing engineering student at BYU. I like designing parts in CAD, making them in the shop or on a 3D printer, and figuring out what I’d change on the next version.</p>
+    <p class="skills">Onshape · SOLIDWORKS · FDM 3D printing · Sheet metal fabrication</p>
 
-    <div class="showcase-card">
-        <img src="statcraft/images/logo.png" alt="StatCraft" style="width: 56px; height: 56px; border-radius: 12px; margin-bottom: 16px; box-shadow: 0 4px 12px rgba(0,0,0,0.3);">
-        <h2 style="margin: 0 0 8px 0; color: #ffffff; font-size: 22px;">StatCraft</h2>
-        <p style="color: #94a3b8; font-size: 14px; margin-bottom: 24px; line-height: 1.5;">
-            The flagship statistical suite connecting Minitab&reg; procedures, JMP&reg; interactive platforms, and a Positron-style R Workbench. Full MPX file compatibility, advanced DOE, and live cross-engine verification.
-        </p>
-        <a href="statcraft/" class="btn">Open StatCraft Showcase &rarr;</a>
-    </div>
+    <section aria-labelledby="workbench">
+      <h2 id="workbench">From my workbench</h2>
+      <div class="projects">
+        <!-- Add a figure with an image and caption inside each project as photos arrive. -->
+        <article class="project">
+          <h3>Onshape models</h3>
+          <p>Part models and assemblies, with notes on the design decisions behind them.</p>
+        </article>
+        <article class="project">
+          <h3>3D prints</h3>
+          <p>Functional prints and prototypes, with notes on materials, fit, and what I changed between versions.</p>
+        </article>
+        <article class="project">
+          <h3>Sheet metal toolbox</h3>
+          <p>A toolbox built from 20-gauge mild steel. Working on the piano hinge gave me a closer look at how small changes in alignment affect fit.</p>
+        </article>
+      </div>
+      <p class="note">Model screenshots, print photos, and build notes to come.</p>
+    </section>
+
+    <section aria-labelledby="software">
+      <h2 id="software">A couple of software projects</h2>
+      <dl class="software">
+        <div><dt><a href="https://skinndeep.github.io/plc-simulator/">PLC Simulator</a></dt><dd>Practice RSLogix 500-style ladder logic with simulated inputs and outputs. <a href="https://github.com/SkinnDeep/plc-simulator">Source</a></dd></div>
+        <div><dt><a href="https://github.com/SkinnDeep/OnWorks-Shortcuts">OnWorks Shortcuts</a></dt><dd>Use Onshape-style mouse navigation and keyboard shortcuts in SOLIDWORKS.</dd></div>
+      </dl>
+      <p class="note">I helped develop both software projects with AI assistance.</p>
+    </section>
+  </main>
+  <footer><span>Isaac Skinner · Manufacturing Engineering</span></footer>
 </body>
 </html>
